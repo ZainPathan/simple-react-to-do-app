@@ -12,7 +12,7 @@ const TodoForm = ( {addTodo} ) => {
         }}>
             <input className="form-control col-md-12" ref={ node => {
                 input = node;
-            }}/>
+            }} placeholder="Add Todo"/>
             <br/>
         </form>
     )
