@@ -22,7 +22,24 @@ class TodoApp extends React.Component {
             .then( (res) => {
                 //Set state with result
                 this.setState( {data: res.data} );
-            })
+            });
+
+        /* Sample data response
+        [
+            {
+                "id": "1",
+                "text": "first one"
+            },
+            {
+                "id": "2",
+                "text": "another todo"
+            },
+            {
+                "id": "3",
+                "text": "omg another one"
+            }
+            ]
+        */
     }
 
     //Add Todo handler
@@ -46,9 +63,10 @@ class TodoApp extends React.Component {
         //Filter all todos except the one to be removed
         const remainingTodos = this.state.data.filter( (todo) => {
             if( todo.id !== id ) {
-                return todo;
+                return true;
             }
         });
+        console.log('Remanining Todos after filter : ', remainingTodos);
         //Update state with filtered todos
         axios.delete(this.apiURL+'/'+id)
             .then( (res) => {
