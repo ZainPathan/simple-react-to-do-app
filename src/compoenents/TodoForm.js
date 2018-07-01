@@ -10,9 +10,13 @@ const TodoForm = ( {addTodo} ) => {
             addTodo(input.value);
             input.value = '';
         }}>
-            <input className="form-control col-md-12" ref={ node => {
-                input = node;
-            }} placeholder="Add Todo"/>
+            <input 
+                className="form-control col-md-12" 
+                ref={ node => {
+                    input = node;
+                }} 
+                placeholder="Add Todo"
+            />
             <br/>
         </form>
     )
