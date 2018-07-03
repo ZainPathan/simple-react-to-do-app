@@ -77,10 +77,20 @@ class TodoApp extends React.Component {
     }
 
     render() {
+        var customPropsObj = {
+            name: 'Zain',
+            age: 28
+        },
+        customPropsArr = [1, 2, 3];
+
         //Render JSX and child components
         return (
             <div>
-                <Title todoCount={this.state.data.length }/>
+                <Title 
+                    todoCount={this.state.data.length } 
+                    customPropsObj={customPropsObj}
+                    customPropsArr={customPropsArr}
+                />
                 <TodoForm addTodo={this.addTodo.bind(this)} />
                 <TodoList
                     todos={this.state.data}
